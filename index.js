@@ -1,8 +1,6 @@
 const express = require('express')
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
-const { JWT_KEY } = require('./constants/jwtKey')
-const { MONGO_DB_URL } = require('./constants/mongoURL')
 const mongoose = require('mongoose')
 const UserModel = require('./models/User')
 const userRoutes = require('./routes/users')
@@ -24,7 +22,6 @@ app.get('/', (req, res) => {
 })
 app.post('/', (req, res) => {
     const { username, firstName, lastName, password } = req.body
-    console.log(JWT_KEY)
     const token = jwt.sign(
         {
             email,
