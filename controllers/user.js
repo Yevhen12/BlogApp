@@ -89,7 +89,6 @@ const changePassword = async (req, res) => {
         message: "Sorry, you don't have access to this page"
     })
     }
-res.json('change password')
 }
 
 const deleteUser = async (req, res) => {
