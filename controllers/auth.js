@@ -20,7 +20,6 @@ const signup = async (req, res) => {
         })
 
         const user = await doc.save()
-
         const token = jwt.sign({id: user._id}, process.env.JWT_KEY)
         const {password, ...others} = user._doc
  
